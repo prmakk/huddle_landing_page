@@ -1,0 +1,223 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/*MAIN CSS CODE BELOW*/
+a{
+  text-decoration: none;
+  color: inherit;
+}
+body{
+  background-color: hsl(257, 40%, 49%);
+  background-image: url(images/bg-desktop.svg);
+  background-size: contain;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+@media screen and (min-width:768px){
+  .container{
+    max-width: 1440px;
+    margin: 0 auto; 
+  }
+  .main-page__logo{
+    margin-top: 50px;
+  }
+  .main-page__info{
+    margin-top: 100px;
+    display: flex;
+  }
+  .main-info{
+    flex-basis: 85%;
+  }
+  .main-info__h1{ 
+    font-family: 'Poppins', sans-serif;
+    font-size: 48px;
+  }
+  .main-image{
+    width: 100%;
+  }
+  .main-info__p{
+    margin-top: 30px;
+    font-size: 22px;
+    margin-right: 30px;
+  }
+  .button{
+    margin-top: 30px;
+    border: none;
+    height: 60px;
+    width: 200px;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px 1px rgb(77, 77, 77);
+    transition: all 0.5s ease-in-out;
+  }
+  .button-text{
+    font-family: 'Poppins', sans-serif;
+    color:hsl(300, 28%, 50%);
+    font-size: 1.2em;
+    transition: all 0.5s ease-in-out;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color: rgb(214, 178, 247);
+  }
+  .button-text:hover{
+    color: #fff;
+  }
+  .main-info__icons{
+    display: flex;
+    font-size: 38px;
+    padding-left: 350px;
+    margin-top: 200px;
+    
+    justify-content: center;
+  }
+  .icon{
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container{
+    margin: 0 auto; 
+    margin: 5%;
+    max-height: auto;
+  }
+  .main-page__logo{
+    margin-top: 50px;
+    max-width: 200px;
+  }
+  .main-page__info{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .main-info__h1{ 
+    font-family: 'Poppins', sans-serif;
+    font-size: 37px;
+  }
+  .main-image{
+    max-width: 100%;
+  }
+  .main-info__p{
+    margin-top: 30px;
+    font-size: 22px;
+  }
+  .button{
+    margin-top: 30px;
+    border: none;
+    height: 60px;
+    width: 200px;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px 1px rgb(77, 77, 77);
+    transition: all 0.5s ease-in-out;
+  }
+  .button-text{
+    font-family: 'Poppins', sans-serif;
+    color:hsl(300, 28%, 50%);
+    font-size: 1.2em;
+    transition: all 0.5s ease-in-out;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color: rgb(214, 178, 247);
+  }
+  .button-text:hover{
+    color: #fff;
+  }
+  .main-info__icons{
+    font-size: 28px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+  .icon{
+    justify-content: space-between;
+    margin: 20px;
+  }
+}
